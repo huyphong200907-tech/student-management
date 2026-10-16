@@ -1,7 +1,7 @@
 
 // Bố cục chung: sidebar, header, dialog, toast và menu trên điện thoại.
 import { page, base, routes, labels, icon, link, esc } from './config.js';
-import { state } from './state.js';
+import { state } from './pages/state.js';
 
 export let main;
 export let dialog;

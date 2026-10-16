@@ -1,5 +1,5 @@
 // Trạng thái thay đổi khi người dùng thao tác và dữ liệu lưu tại trình duyệt.
-import { DB } from './config.js';
+import { DB } from '../config.js';
 export function readSaved(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
   catch { return fallback; }

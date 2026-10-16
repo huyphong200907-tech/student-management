@@ -1,7 +1,7 @@
 
 // Trang hồ sơ sinh viên: hiển thị và lưu thông tin liên hệ trên trình duyệt.
 import { icon, dateText, heading, esc } from '../config.js';
-import { state, save } from '../state.js';
+import { state, save } from './state.js';
 import { main, toast } from '../layout.js';
 
 export function profile(render) {

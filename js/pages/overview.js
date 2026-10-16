@@ -3,7 +3,7 @@ import {
     DB, icon,money,sum,stat, gpa, grade, link, esc
 } from '../config.js';
 
-import { state, isPaid } from '../state.js';
+import { state, isPaid } from './state.js';
 import { main } from '../layout.js';
 import { newsPanel } from '../news.js';
 

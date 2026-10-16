@@ -1,7 +1,7 @@
 
 // Trang kết quả học tập: GPA, bảng điểm, phân bố điểm và xuất CSV.
 import { DB, icon, esc, heading, semesterSelect, stat, gpa, grade, score, sum } from '../config.js';
-import { state } from '../state.js';
+import { state } from './state.js';
 import { main } from '../layout.js';
 import { csv } from '../csv.js';
 

@@ -1,8 +1,8 @@
 
 // Thông báo, danh sách tin tức và tìm kiếm trên toàn website.
-import { DB, labels, icon, link, esc, dateText } from './config.js';
+import { DB, labels, icon, link, esc, dateText } from '../config.js';
 import { state } from './state.js';
-import { openDialog, toast } from './layout.js';
+import { openDialog, toast } from '../layout.js';
 
 export function newsRows(category, limit = 3) {
   return DB.news

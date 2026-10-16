@@ -1,7 +1,7 @@
 
 // Trang lịch học: chuyển tuần, chế độ tuần/danh sách và chi tiết buổi học.
 import { DB, icon, heading, esc } from '../config.js';
-import { state } from '../state.js';
+import { state } from './state.js';
 import { main, openDialog } from '../layout.js';
 
 function weekDates() {
