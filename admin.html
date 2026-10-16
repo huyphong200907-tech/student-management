@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản trị | Cổng thông tin sinh viên</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/admin.css">
+  <script defer src="data/database.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</head>
+<body data-page="admin">
+  <div class="admin-layout">
+    <aside id="sidebar" class="admin-sidebar">
+      <div class="sidebar-title"><strong>CỔNG SINH VIÊN</strong><span>Trang quản trị</span></div>
+      <div class="admin-user"><span class="admin-avatar">AD</span><div><strong>Quản trị viên</strong><small>Administrator</small></div></div>
+      <nav id="admin-nav" aria-label="Chức năng quản trị">
+        <p class="nav-caption">QUẢN LÝ DỮ LIỆU</p>
+        <button data-section="students"><span>SV</span>Sinh viên</button>
+        <button data-section="courses"><span>MH</span>Môn học</button>
+        <button data-section="schedules"><span>LH</span>Lịch học</button>
+        <button data-section="results"><span>Đ</span>Điểm</button>
+        <button data-section="fees"><span>HP</span>Học phí</button>
+      </nav>
+    </aside>
+    <div class="admin-content">
+      <header class="admin-header">
+        <button id="menu-button" class="menu-button" aria-label="Mở menu">☰</button>
+        <div><p>Hệ thống quản lý</p><h1>Quản trị cổng thông tin sinh viên</h1></div>
+        <button id="logout" class="logout-button">Đăng xuất</button>
+      </header>
+      <main id="admin-main"><p>Đang tải dữ liệu...</p></main>
+    </div>
+  </div>
+  <div id="message" class="message" role="status" aria-live="polite"></div>
+</body>
+</html>

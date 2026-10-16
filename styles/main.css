@@ -1,5 +1,4 @@
-/* File CSS chính: các trang HTML tiếp tục dùng styles/main.css */
-/* Thứ tự import quan trọng để giữ nguyên giao diện ban đầu. */
+/* File CSS chính: tải các phần giao diện theo đúng thứ tự ban đầu. */
 @import url("./base.css");
 @import url("./sidebar.css");
 @import url("./layout.css");

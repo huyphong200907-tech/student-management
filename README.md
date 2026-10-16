@@ -1,3 +1,7 @@
+# Cổng sinh viên – có trang đăng nhập demo
+
+Xem [HUONG_DAN_DANG_NHAP.md](HUONG_DAN_DANG_NHAP.md) để biết tài khoản demo và cách triển khai.
+
 # Cổng thông tin sinh viên — Bài tập lớn Thiết kế web
 
 Dự án HTML, CSS, JavaScript thuần gồm **Tổng quan, Học phí, Lịch học, Kết quả, Profile**. Giao diện tham khảo ảnh người dùng cung cấp: thanh điều hướng xanh đậm, banner xanh, các thẻ nội dung nền trắng. Logo SVG trong dự án là biểu tượng minh họa tự dựng, không phải logo chính thức.
@@ -29,25 +33,51 @@ Máy chủ chỉ lắng nghe tại `127.0.0.1:3000`, không xuất bản website
 
 ```text
 student-portal/
-├── assets/
-│   └── logo.svg             # Biểu tượng minh họa
-├── data/
-│   └── database.js          # Sinh viên, học phí, lịch, điểm, thông báo mẫu
+├── assets/logo.svg
+├── data/database.js
 ├── js/
-│   └── app.js               # Giao diện chung và xử lý 5 trang
-├── pages/
+│   ├── app.js              # Khởi động, điều phối các trang
+│   ├── config.js           # Hàm dùng chung, điều hướng, icon
+│   ├── state.js            # Trạng thái, localStorage
+│   ├── layout.js           # Menu, header, hộp thoại
+│   ├── news.js             # Thông báo và tìm kiếm
+│   ├── csv.js              # Xuất CSV
+│   └── pages/             # Mỗi trang một file JavaScript
+│       ├── overview.js
+│       ├── tuition.js
+│       ├── schedule.js
+│       ├── results.js
+│       └── profile.js
+├── pages/                  # 4 trang HTML phụ
 │   ├── hoc-phi.html
 │   ├── lich-hoc.html
 │   ├── ket-qua.html
 │   └── profile.html
 ├── styles/
-│   └── main.css             # Giao diện và responsive
-├── .gitignore
-├── README.md
-├── index.html               # Tổng quan
-├── package.json             # Lệnh npm start
-└── server.js                # Máy chủ localhost, dùng thư viện có sẵn của Node
+│   ├── main.css           # Chỉ chứa @import
+│   ├── base.css
+│   ├── sidebar.css
+│   ├── layout.css
+│   ├── overview.css
+│   ├── components.css
+│   ├── tuition.css
+│   ├── schedule.css
+│   ├── results.css
+│   ├── profile.css
+│   ├── dialog.css
+│   └── responsive.css
+├── index.html
+├── package.json
+└── server.js
 ```
+
+### Chạy trên GitHub Pages
+
+Trang HTML sử dụng `<script type="module" src="...">` để tải `js/app.js` và các module import.
+
+Trong GitHub, chọn **Settings → Pages → Deploy from a branch → main → /(root)**. Trang tĩnh có thể chạy ở đường dẫn dạng `https://USERNAME.github.io/student-management/`. GitHub Pages không chạy `server.js` (máy chủ này chỉ cần cho localhost).
+
+Thay đổi `styles/main.css` thành các lệnh `@import` để dùng thực sự các file CSS đã tách. Giữ thứ tự import; `responsive.css` ở cuối.
 
 ## Các chức năng
 
@@ -69,7 +99,7 @@ Thanh tìm kiếm tìm thông báo, tên/mã học phần và các trang. Nhập
 - Điểm tổng kết = 40% quá trình + 60% điểm thi, làm tròn 1 chữ số thập phân.
 - A ≥ 8.5, B ≥ 7.0, C ≥ 5.5, D ≥ 4.0, F < 4.0; quy đổi hệ 4 tương ứng 4, 3, 2, 1, 0.
 - GPA = tổng (điểm hệ 4 × tín chỉ) / tổng tín chỉ. GPA tích lũy tính trên cả 2 học kỳ mẫu.
-- Quy tắc xếp loại GPA mẫu: từ 3.6 Xuất sắc; từ 3.2 Giỏi; từ 2.5 Khá; các mức thấp hơn hiển thị theo ngưỡng trong `app.js`. Đây không phải quy định đào tạo chính thức.
+- Quy tắc xếp loại GPA mẫu: từ 3.6 Xuất sắc; từ 3.2 Giỏi; từ 2.5 Khá; các mức thấp hơn hiển thị theo ngưỡng trong `js/pages/results.js`. Đây không phải quy định đào tạo chính thức.
 
 ## Lưu dữ liệu
 

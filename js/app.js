@@ -1,6 +1,7 @@
 // File điều phối chính: khởi tạo ứng dụng và gọi đúng trang.
 import { DB, page } from './config.js';
 import { state } from './state.js';
+import { requireRole } from './auth.js';
 import { setupLayout } from './layout.js';
 import { setupNews } from './news.js';
 import { overview } from './pages/overview.js';
@@ -18,8 +19,10 @@ export function render() {
   if (select) select.onchange = () => { state.semester = select.value; render(); };
 }
 
-setupLayout();
-setupNews();
-const querySemester = new URLSearchParams(location.search).get('semester');
-if (DB.semesters.some(s => s.id === querySemester)) state.semester = querySemester;
-render();
+if (requireRole('student')) {
+  setupLayout();
+  setupNews();
+  const querySemester = new URLSearchParams(location.search).get('semester');
+  if (DB.semesters.some(s => s.id === querySemester)) state.semester = querySemester;
+  render();
+}

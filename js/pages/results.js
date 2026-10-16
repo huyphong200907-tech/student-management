@@ -1,119 +1,15 @@
-
 // Trang kết quả học tập: GPA, bảng điểm, phân bố điểm và xuất CSV.
 import { DB, icon, esc, heading, semesterSelect, stat, gpa, grade, score, sum } from '../config.js';
-import { state } from './state.js';
+import { state } from '../state.js';
 import { main } from '../layout.js';
 import { csv } from '../csv.js';
-
 export function results() {
-  const rows = DB.results.filter(row => row.semester === state.semester);
+  const rows = state.records.results.filter(row => row.semester === state.semester);
   const average = gpa(rows);
   const passed = rows.filter(r => grade(r)[1] > 0);
-
-  const ranking = Number(average) >= 3.6 ? 'Xuất sắc'
-    : Number(average) >= 3.2 ? 'Giỏi'
-    : Number(average) >= 2.5 ? 'Khá'
-    : Number(average) >= 2 ? 'Trung bình'
-    : Number(average) >= 1 ? 'Yếu' : 'Kém';
-
-  main.innerHTML = heading(
-    'Kết quả học tập',
-    'Mỗi học phần là một bước tiến trên hành trình của bạn.',
-    semesterSelect(state.semester)
-  ) + `
-    <div class="stats-grid three">
-      ${stat('GPA học kỳ', average + ' <em>/ 4.0</em>', 'Xếp loại mẫu: ' + ranking, 'results', 'blue')}
-      ${stat('Tín chỉ đạt', sum(passed, 'credits') + ' <em>/ ' + sum(rows, 'credits') + '</em>', 'Tín chỉ hoàn thành trong học kỳ', 'cap', 'green')}
-      ${stat('Học phần đạt', passed.length + ' <em>/ ' + rows.length + '</em>', 'Dữ liệu kết quả minh họa', 'check', 'purple')}
-    </div>
-
-    <section class="panel">
-      <div class="panel-heading">
-        <h2>Bảng điểm học phần</h2>
-        <button class="btn secondary compact" id="export-results">
-          ${icon('download')} Xuất bảng điểm
-        </button>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Học phần</th>
-              <th>Tín chỉ</th>
-              <th>Quá trình</th>
-              <th>Điểm thi</th>
-              <th>Tổng kết</th>
-              <th>Điểm chữ</th>
-              <th>Kết quả</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rows.map(r => `
-              <tr>
-                <td><b>${esc(r.name)}</b><small>${esc(r.code)}</small></td>
-                <td>${r.credits}</td>
-                <td>${r.process.toFixed(1)}</td>
-                <td>${r.exam.toFixed(1)}</td>
-                <td><strong class="score">${score(r).toFixed(1)}</strong></td>
-                <td>
-                  <span class="grade ${grade(r)[0] === 'A' ? 'green' : 'blue'}">
-                    ${grade(r)[0]}
-                  </span>
-                </td>
-                <td>
-                  <span class="badge ${grade(r)[1] ? 'green' : 'orange'}">
-                    ${grade(r)[1] ? 'Đạt' : 'Chưa đạt'}
-                  </span>
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <div class="results-bottom">
-      <section class="panel">
-        <div class="panel-heading">
-          <h2>Phân bố điểm chữ</h2>
-          <span class="muted">${rows.length} học phần</span>
-        </div>
-        <div class="grade-chart">
-          ${['A', 'B', 'C', 'D', 'F'].map(letter => {
-            const count = rows.filter(r => grade(r)[0] === letter).length;
-            return `
-              <div class="bar-row">
-                <b>${letter}</b>
-                <div class="bar-track">
-                  <div style="width:${count / Math.max(rows.length, 1) * 100}%"></div>
-                </div>
-                <span>${count}</span>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      </section>
-
-      <section class="panel">
-        <div class="panel-heading">
-          <h2>Cách tính điểm mẫu</h2>
-          ${icon('info')}
-        </div>
-        <div class="grading-note">
-          <p>Tổng kết = <b>40% quá trình + 60% điểm thi</b>, làm tròn 1 chữ số thập phân.</p>
-          <p>A ≥ 8.5 · B ≥ 7.0 · C ≥ 5.5 · D ≥ 4.0 · F &lt; 4.0</p>
-          <p>Quy đổi A/B/C/D/F tương ứng 4/3/2/1/0. GPA là trung bình có trọng số theo tín chỉ.</p>
-          <small>Quy tắc phục vụ bài tập, không phải quy định chính thức.</small>
-        </div>
-      </section>
-    </div>
-  `;
-
-  document.getElementById('export-results').onclick = () => {
-    csv(
-      'bang-diem',
-      ['Mã học phần', 'Học phần', 'Tín chỉ', 'Quá trình', 'Điểm thi', 'Tổng kết', 'Điểm chữ', 'Hệ 4'],
-      rows.map(r => [r.code, r.name, r.credits, r.process, r.exam, score(r), ...grade(r)])
-    );
-  };
+  main.innerHTML = heading('Kết quả học tập', 'Mỗi học phần là một bước tiến trên hành trình của bạn.', semesterSelect(state.semester)) + `
+  <div class="stats-grid three">${stat('GPA học kỳ', average + ' <em>/ 4.0</em>', Number(average) >= 3.6 ? 'Xếp loại mẫu: Xuất sắc' : Number(average) >= 3.2 ? 'Xếp loại mẫu: Giỏi' : Number(average) >= 2.5 ? 'Xếp loại mẫu: Khá' : Number(average) >= 2 ? 'Xếp loại mẫu: Trung bình' : Number(average) >= 1 ? 'Xếp loại mẫu: Yếu' : 'Xếp loại mẫu: Kém', 'results', 'blue')}${stat('Tín chỉ đạt', sum(passed, 'credits') + ' <em>/ ' + sum(rows, 'credits') + '</em>', 'Tín chỉ hoàn thành trong học kỳ', 'cap', 'green')}${stat('Học phần đạt', passed.length + ' <em>/ ' + rows.length + '</em>', 'Dữ liệu kết quả minh họa', 'check', 'purple')}</div>
+  <section class="panel"><div class="panel-heading"><h2>Bảng điểm học phần</h2><button class="btn secondary compact" id="export-results">${icon('download')}Xuất bảng điểm</button></div><div class="table-wrap"><table><thead><tr><th>Học phần</th><th>Tín chỉ</th><th>Quá trình</th><th>Điểm thi</th><th>Tổng kết</th><th>Điểm chữ</th><th>Kết quả</th></tr></thead><tbody>${rows.map(r => `<tr><td><b>${esc(r.name)}</b><small>${esc(r.code)}</small></td><td>${r.credits}</td><td>${r.process.toFixed(1)}</td><td>${r.exam.toFixed(1)}</td><td><strong class="score">${score(r).toFixed(1)}</strong></td><td><span class="grade ${grade(r)[0] === 'A' ? 'green' : 'blue'}">${grade(r)[0]}</span></td><td><span class="badge ${grade(r)[1] ? 'green' : 'orange'}">${grade(r)[1] ? 'Đạt' : 'Chưa đạt'}</span></td></tr>`).join('')}</tbody></table></div></section>
+  <div class="results-bottom"><section class="panel"><div class="panel-heading"><h2>Phân bố điểm chữ</h2><span class="muted">${rows.length} học phần</span></div><div class="grade-chart">${['A', 'B', 'C', 'D', 'F'].map(letter => { const count = rows.filter(r => grade(r)[0] === letter).length; return `<div class="bar-row"><b>${letter}</b><div class="bar-track"><div style="width:${count / Math.max(rows.length, 1) * 100}%"></div></div><span>${count}</span></div>`; }).join('')}</div></section><section class="panel"><div class="panel-heading"><h2>Cách tính điểm mẫu</h2>${icon('info')}</div><div class="grading-note"><p>Tổng kết = <b>40% quá trình + 60% điểm thi</b>, làm tròn 1 chữ số thập phân.</p><p>A ≥ 8.5 · B ≥ 7.0 · C ≥ 5.5 · D ≥ 4.0 · F &lt; 4.0</p><p>Quy đổi A/B/C/D/F tương ứng 4/3/2/1/0. GPA là trung bình có trọng số theo tín chỉ.</p><small>Quy tắc phục vụ bài tập, không phải quy định chính thức.</small></div></section></div>`;
+  document.getElementById('export-results').onclick = () => csv('bang-diem', ['Mã học phần', 'Học phần', 'Tín chỉ', 'Quá trình', 'Điểm thi', 'Tổng kết', 'Điểm chữ', 'Hệ 4'], rows.map(r => [r.code, r.name, r.credits, r.process, r.exam, score(r), ...grade(r)]));
 }
