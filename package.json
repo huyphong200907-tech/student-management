@@ -1,0 +1,8 @@
+{
+  "name": "student-portal-web-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bài tập lớn thiết kế web - Cổng thông tin sinh viên",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
