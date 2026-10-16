@@ -1,0 +1,169 @@
+/* ======================================================================
+   72. HỘP THOẠI (POPUP)
+   Cửa sổ nổi, nền tối phía sau và khung nội dung.
+   ====================================================================== */
+dialog {
+  padding:0;
+  border:0;
+  border-radius:16px;
+  width:min(590px,calc(100vw - 32px));
+  max-height:85vh;
+  color:var(--text);
+  box-shadow:0 25px 90px #10234438
+}
+dialog::backdrop {
+  background:#14244666;
+  backdrop-filter:blur(4px)
+}
+
+/* ======================================================================
+   73. PHẦN ĐẦU POPUP
+   Tên cửa sổ và nút đóng.
+   ====================================================================== */
+.dialog-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:20px 24px;
+  border-bottom:1px solid var(--line)
+}
+.dialog-top h2 {
+  font-size:17px;
+  line-height:1.6
+}
+.dialog-top button {
+  flex-shrink:0
+}
+#dialog-body {
+  padding:24px;
+  font-size:13px
+}
+#dialog-body>.muted {
+  margin-bottom:17px;
+  font-size:12px
+}
+#dialog-body .news-row {
+  width:100%;
+  margin:0
+}
+#dialog-body>.tabs {
+  margin-bottom:14px
+}
+
+/* ======================================================================
+   74. NỘI DUNG BÀI VIẾT / THÔNG BÁO TRONG POPUP
+   Ngày đăng và phần nội dung chi tiết.
+   ====================================================================== */
+.article-meta {
+  font-size:11px;
+  color:var(--muted)
+}
+.article-body {
+  line-height:1.9;
+  margin:20px 0
+}
+
+/* ======================================================================
+   75. BẢNG TỔNG KẾT THANH TOÁN TRONG POPUP
+   Tổng tiền cùng các hàng mô tả.
+   ====================================================================== */
+.payment-summary {
+  background:#f7f9fd;
+  padding:18px;
+  border-radius:9px;
+  margin:20px 0
+}
+.payment-summary>div {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:9px 0;
+  font-size:12px
+}
+.payment-summary .total {
+  border-top:1px solid #dee6f3;
+  margin-top:10px;
+  padding-top:16px;
+  font-size:15px;
+  color:var(--blue)
+}
+
+/* ======================================================================
+   76. DANH SÁCH THÔNG TIN CHI TIẾT
+   Hiển thị cặp nhãn và giá trị ở dạng từng dòng.
+   ====================================================================== */
+.details {
+  margin:22px 0 0
+}
+.details>div {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line)
+}
+.details dt {
+  margin:0
+}
+.details dd {
+  margin:0;
+  font-size:12px;
+  font-weight:600
+}
+
+/* ======================================================================
+   77. KẾT QUẢ TÌM KIẾM
+   Mỗi mục trong danh sách kết quả.
+   ====================================================================== */
+.search-result {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-align:left;
+  width:100%;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+  font-size:12px
+}
+.search-result>.icon {
+  width:17px;
+  color:#6485c8
+}
+.search-result>.icon:last-child {
+  margin-left:auto;
+  width:14px
+}
+.search-result small {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:4px
+}
+
+/* ======================================================================
+   78. THÔNG BÁO NHỎ XUẤT HIỆN (TOAST)
+   Vị trí, màu nền, hiệu ứng hiện/ẩn khi thao tác.
+   ====================================================================== */
+.toast {
+  position:fixed;
+  bottom:25px;
+  left:calc(50% + 119px);
+  transform:translate(-50%,15px);
+  background:#203766;
+  color:white;
+  border-radius:10px;
+  padding:13px 22px;
+  font-size:12px;
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s,transform .2s;
+  box-shadow:0 8px 25px #14244633;
+  max-width:calc(100vw - 32px)
+}
+.toast.show {
+  opacity:1;
+  transform:translate(-50%,0)
+}
+

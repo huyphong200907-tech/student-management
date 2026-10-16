@@ -1,0 +1,13 @@
+/* File CSS chính: các trang HTML tiếp tục dùng styles/main.css */
+/* Thứ tự import quan trọng để giữ nguyên giao diện ban đầu. */
+@import url("./base.css");
+@import url("./sidebar.css");
+@import url("./layout.css");
+@import url("./overview.css");
+@import url("./components.css");
+@import url("./tuition.css");
+@import url("./schedule.css");
+@import url("./results.css");
+@import url("./profile.css");
+@import url("./dialog.css");
+@import url("./responsive.css");

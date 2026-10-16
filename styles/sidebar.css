@@ -1,0 +1,159 @@
+/* ======================================================================
+   09. MENU BÊN TRÁI (SIDEBAR)
+   Thay đổi chiều rộng, màu nền và khoảng cách của thanh menu.
+   ====================================================================== */
+.sidebar {
+  /* Chiều rộng menu bên trái. */
+  width:238px;
+  position:fixed;
+  inset:0 auto 0 0;
+  /* Màu nền menu (dùng biến --navy ở đầu file). */
+  background:var(--navy);
+  /* Màu chữ trong menu. */
+  color:#d9e3fb;
+  display:flex;
+  flex-direction:column;
+  z-index:40;
+  /* Khoảng đệm bên trong menu. */
+  padding:30px 18px 18px
+}
+
+/* ======================================================================
+   10. LOGO / ẢNH VÀ TÊN THƯƠNG HIỆU
+   Căn chỉnh logo ở đầu menu.
+   ====================================================================== */
+.brand {
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  gap:10px;
+  text-align:center
+}
+
+/* ======================================================================
+   10A. KÍCH THƯỚC ẢNH LOGO
+   width và height là chiều rộng / chiều cao của ảnh logo.
+   ====================================================================== */
+.brand img {
+  /* Chiều rộng logo. */
+  width:66px;
+  /* Chiều cao logo. */
+  height:66px
+}
+.brand span {
+  font-size:12px;
+  font-weight:800;
+  color:#fbd66b;
+  line-height:1.55;
+  letter-spacing:.45px
+}
+
+/* ======================================================================
+   11. NHÃN THÔNG TIN CỔNG SINH VIÊN
+   Dòng nhãn ở đầu thanh menu.
+   ====================================================================== */
+.portal-label {
+  font-size:10px;
+  letter-spacing:2px;
+  margin:21px 8px 34px;
+  padding-bottom:20px;
+  border-bottom:1px solid #ffffff14;
+  display:flex;
+  justify-content:space-between;
+  color:#b2c4e7
+}
+.portal-label span {
+  color:#7ce8c6
+}
+
+/* ======================================================================
+   12. TIÊU ĐỀ NHÓM MENU
+   Cỡ chữ, màu và khoảng cách của nhãn phân nhóm.
+   ====================================================================== */
+.nav-caption {
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.3px;
+  color:#92a7ce;
+  margin:0 13px 14px
+}
+
+/* ======================================================================
+   13. CÁC MỤC MENU
+   Nền, chữ, padding và hiệu ứng hover/active cho từng mục điều hướng.
+   ====================================================================== */
+.nav-link {
+  display:flex;
+  gap:13px;
+  align-items:center;
+  /* Khoảng đệm tạo vùng bấm menu. */
+  padding:13px 15px;
+  border-radius:9px;
+  margin-bottom:7px;
+  /* Cỡ chữ từng mục menu. */
+  font-size:14px;
+  /* Màu chữ menu chưa được chọn. */
+  color:#d0ddf6;
+  transition:background .2s
+}
+
+/* ======================================================================
+   13A. HIỆU ỨNG KHI RÊ CHUỘT VÀO MENU
+   Đổi nền mục menu khi con trỏ đi qua.
+   ====================================================================== */
+.nav-link:hover {
+  background:#ffffff0d
+}
+
+/* ======================================================================
+   13B. MENU ĐANG ĐƯỢC CHỌN
+   Nền xanh và màu chữ trắng của mục đang mở.
+   ====================================================================== */
+.nav-link.active {
+  color:#fff;
+  background:#3863ae;
+  box-shadow:0 4px 15px #11224425
+}
+.nav-link.active .icon {
+  color:#fff
+}
+.nav-dot {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#aecbff;
+  margin-left:auto
+}
+
+/* ======================================================================
+   14. PHẦN CUỐI MENU
+   Khu vực thông báo học kỳ và nhãn demo.
+   ====================================================================== */
+.sidebar-bottom {
+  margin-top:auto;
+  padding-top:45px
+}
+.semester-note {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:17px 8px;
+  border-top:1px solid #ffffff17;
+  border-bottom:1px solid #ffffff17
+}
+.semester-note b {
+  font-size:11px;
+  display:block
+}
+.semester-note small {
+  color:#9fb1d4;
+  font-size:11px
+}
+.demo-tag {
+  font-size:9px;
+  letter-spacing:.7px;
+  text-align:center;
+  color:#9fb1d4;
+  padding-top:18px
+}
+

@@ -1,0 +1,217 @@
+/* ======================================================================
+   15. BỐ CỤC PHẦN NỘI DUNG
+   Chừa khoảng bên trái bằng độ rộng sidebar.
+   ====================================================================== */
+.workspace {
+  margin-left:238px
+}
+
+/* ======================================================================
+   16. THANH TRÊN CÙNG (HEADER / TOPBAR)
+   Chiều cao, nền và bố cục của thanh phía trên nội dung.
+   ====================================================================== */
+.topbar {
+  /* Chiều cao của thanh header. */
+  height:78px;
+  padding:0 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  /* Màu nền thanh header. */
+  background:#fff;
+  border-bottom:1px solid var(--line)
+}
+
+/* ======================================================================
+   17. ĐƯỜNG DẪN TRANG (BREADCRUMB)
+   Dòng chỉ vị trí đang xem.
+   ====================================================================== */
+.breadcrumb {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  font-size:12px;
+  white-space:nowrap
+}
+.breadcrumb>span {
+  color:var(--muted)
+}
+.breadcrumb>.icon {
+  width:12px;
+  color:#a8b4cb
+}
+.breadcrumb b {
+  font-weight:600
+}
+
+/* ======================================================================
+   18. CÁC NÚT PHÍA PHẢI HEADER
+   Nhóm tìm kiếm, thông báo và tài khoản.
+   ====================================================================== */
+.topbar-right {
+  display:flex;
+  align-items:center;
+  gap:22px
+}
+
+/* ======================================================================
+   19. THANH TÌM KIẾM
+   Nền ô tìm kiếm, kích thước, đường viền và cỡ chữ.
+   ====================================================================== */
+.search-box {
+  display:flex;
+  align-items:center;
+  background:#f5f7fc;
+  border:1px solid #edf0f7;
+  border-radius:9px;
+  width:270px;
+  padding:9px 12px;
+  gap:9px;
+  color:#96a1b5
+}
+.search-box .icon {
+  width:17px
+}
+.search-box input {
+  background:none;
+  border:0;
+  outline:none;
+  width:100%;
+  min-width:0;
+  font-size:12px;
+  color:var(--text)
+}
+.search-box input::placeholder {
+  color:#96a1b5
+}
+.search-box:focus-within {
+  box-shadow:0 0 0 2px #aec4ff
+}
+
+/* ======================================================================
+   20. NHÃN PHÍM TẮT
+   Hiển thị ký hiệu phím tắt bên trong thanh tìm kiếm.
+   ====================================================================== */
+kbd {
+  font:11px Arial;
+  border:1px solid #dee4f0;
+  border-radius:3px;
+  padding:0 4px
+}
+
+/* ======================================================================
+   21. NÚT ICON
+   Nút biểu tượng ở thanh trên cùng.
+   ====================================================================== */
+.icon-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  color:#687999
+}
+.icon-btn:hover {
+  background:#edf2ff
+}
+
+/* ======================================================================
+   22. BIỂU TƯỢNG THÔNG BÁO
+   Vị trí chấm báo có thông báo mới.
+   ====================================================================== */
+.notification {
+  position:relative
+}
+.notification i {
+  height:5px;
+  width:5px;
+  border-radius:50%;
+  position:absolute;
+  top:5px;
+  right:7px;
+  background:#e99453;
+  border:1px solid white
+}
+
+/* ======================================================================
+   23. THÔNG TIN TÀI KHOẢN TRÊN HEADER
+   Tên, mã người dùng và ảnh đại diện.
+   ====================================================================== */
+.user-chip {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-left:22px;
+  border-left:1px solid var(--line)
+}
+
+/* ======================================================================
+   23A. ẢNH ĐẠI DIỆN (AVATAR)
+   Hiện tại là hình tròn có chữ, không phải ảnh nền.
+   ====================================================================== */
+.avatar {
+  display:grid;
+  place-items:center;
+  background:#e7eefb;
+  color:#3863ae;
+  border:3px solid #f5f7fd;
+  /* Chiều rộng ảnh đại diện tròn. */
+  width:40px;
+  /* Chiều cao ảnh đại diện tròn. */
+  height:40px;
+  /* Bo tròn avatar thành hình tròn. */
+  border-radius:50%;
+  font-size:12px;
+  font-weight:700
+}
+.user-chip b {
+  font-size:12px;
+  display:block
+}
+.user-chip small {
+  display:block;
+  font-size:10px;
+  color:var(--muted)
+}
+.user-chip>.icon {
+  width:13px;
+  margin-left:12px;
+  color:#96a1b5;
+  transform:rotate(90deg)
+}
+
+/* ======================================================================
+   24. KHU VỰC NỘI DUNG CHÍNH
+   Khoảng cách nội dung với các cạnh và chiều rộng tối đa.
+   ====================================================================== */
+main {
+  padding:28px 32px 0;
+  max-width:1800px;
+  margin:auto;
+  min-height:calc(100vh - 145px)
+}
+main:focus {
+  outline:none
+}
+
+/* ======================================================================
+   25. CHÂN TRANG (FOOTER)
+   Cỡ chữ, màu chữ và khoảng cách ở cuối website.
+   ====================================================================== */
+footer {
+  max-width:1800px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:28px 32px 22px;
+  color:#8b97ad;
+  font-size:10px
+}
+footer i {
+  font-style:normal;
+  margin:0 8px
+}
+

@@ -1,0 +1,83 @@
+/* ======================================================================
+   60. MÀU ĐIỂM SỐ / ĐIỂM CHỮ
+   Màu chữ điểm và nhãn xếp loại.
+   ====================================================================== */
+.score {
+  color:var(--blue)
+}
+.grade {
+  display:inline-grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border-radius:7px;
+  font-weight:700
+}
+
+/* ======================================================================
+   61. PHẦN TỔNG KẾT KẾT QUẢ HỌC TẬP
+   Biểu đồ điểm và hướng dẫn xếp loại.
+   ====================================================================== */
+.results-bottom {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:20px
+}
+.grade-chart {
+  padding:23px
+}
+
+/* ======================================================================
+   62. THANH BIỂU ĐỒ ĐIỂM
+   Chiều cao và màu của các thanh biểu đồ.
+   ====================================================================== */
+.bar-row {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:12px;
+  font-size:11px
+}
+.bar-row:last-child {
+  margin-bottom:0
+}
+.bar-row b {
+  width:12px;
+  color:#6f81a1
+}
+.bar-row span {
+  color:#9aa7bc;
+  width:15px
+}
+.bar-track {
+  height:10px;
+  background:#f0f4fb;
+  border-radius:3px;
+  flex:1;
+  overflow:hidden
+}
+.bar-track>div {
+  height:100%;
+  background:linear-gradient(90deg,#9ebcff,#4275e0);
+  border-radius:3px
+}
+
+/* ======================================================================
+   63. GHI CHÚ CÁCH TÍNH ĐIỂM
+   Văn bản giải thích xếp loại.
+   ====================================================================== */
+.grading-note {
+  padding:21px;
+  font-size:11px;
+  color:#7a8aa5;
+  line-height:1.9
+}
+.grading-note p {
+  margin-bottom:10px
+}
+.grading-note small {
+  font-size:10px;
+  color:#a1adbf
+}
+

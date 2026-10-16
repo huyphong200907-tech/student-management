@@ -1,0 +1,515 @@
+/* ======================================================================
+   79. MENU TRÊN ĐIỆN THOẠI
+   Ẩn menu mobile khi đang ở màn hình desktop.
+   ====================================================================== */
+.mobile-menu,.sidebar-scrim {
+  display:none
+}
+
+/* ======================================================================
+   80. RESPONSIVE: MÀN HÌNH RẤT RỘNG (>= 1600px)
+   Tăng khoảng cách và cỡ chữ phù hợp màn hình lớn.
+   ====================================================================== */
+@media(min-width:1600px) {
+  main {
+    padding-top:34px
+  }
+  .welcome {
+    min-height:216px;
+    padding:34px 38px
+  }
+  .welcome h1 {
+    font-size:35px
+  }
+  .stat {
+    padding:22px
+  }
+  .news-row {
+    padding-top:21px;
+    padding-bottom:21px
+  }
+  .news-row b {
+    font-size:13px
+  }
+  .quick-link {
+    padding:20px
+  }
+  .quick-link b {
+    font-size:13px
+  }
+  .quick-link small {
+    font-size:11px
+  }
+}
+
+/* ======================================================================
+   81. RESPONSIVE: MÀN HÌNH VỪA (<= 1200px)
+   Thu hẹp sidebar, search và khoảng cách.
+   ====================================================================== */
+@media(max-width:1200px) {
+  .sidebar {
+    width:214px;
+    padding-left:14px;
+    padding-right:14px
+  }
+  .workspace {
+    margin-left:214px
+  }
+  main {
+    padding:24px 22px 0
+  }
+  .topbar {
+    padding:0 22px
+  }
+  .search-box {
+    width:205px
+  }
+  .topbar-right {
+    gap:13px
+  }
+  .user-chip {
+    padding-left:13px
+  }
+  .breadcrumb>span {
+    display:none
+  }
+  .breadcrumb>.icon {
+    display:none
+  }
+  .stats-grid,.quick-links {
+    gap:12px
+  }
+  .stat {
+    padding:14px
+  }
+  .stat>strong,.stat:last-child>strong {
+    font-size:23px
+  }
+  .stat>small {
+    font-size:9px
+  }
+  .quick-link {
+    gap:8px;
+    padding:12px
+  }
+  .quick-link>.icon {
+    display:none
+  }
+  .quick-icon {
+    width:34px;
+    height:38px
+  }
+  .quick-link b {
+    font-size:10px
+  }
+  .bottom-grid {
+    grid-template-columns:1fr 1fr
+  }
+  .activity {
+    gap:16px;
+    padding:20px
+  }
+  .activity-art {
+    min-width:90px
+  }
+  .activity h3 {
+    font-size:13px
+  }
+  .profile-grid {
+    grid-template-columns:245px 1fr;
+    gap:18px
+  }
+  .form-actions {
+    flex-wrap:wrap
+  }
+  .form-actions>span {
+    flex-basis:100%;
+    margin-bottom:3px
+  }
+  .calendar-toolbar {
+    flex-wrap:wrap
+  }
+  .toast {
+    left:calc(50% + 107px)
+  }
+}
+
+/* ======================================================================
+   82. RESPONSIVE: TABLET (<= 960px)
+   Chuyển một số lưới sang 2 cột hoặc 1 cột.
+   ====================================================================== */
+@media(max-width:960px) {
+  .stats-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+  .quick-links {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+  .quick-link>.icon {
+    display:block
+  }
+  .quick-link b {
+    font-size:12px
+  }
+  .news-grid,.bottom-grid {
+    grid-template-columns:1fr
+  }
+  .user-chip>span:not(.avatar),.user-chip>.icon {
+    display:none
+  }
+  .search-box {
+    width:215px
+  }
+  .welcome-art {
+    width:135px
+  }
+  .cap-tile {
+    width:80px;
+    height:80px
+  }
+  .welcome h1 {
+    font-size:27px
+  }
+  .welcome-kicker {
+    font-size:8px;
+    letter-spacing:1px
+  }
+  .stat-top {
+    font-size:11px
+  }
+  .three .stat>strong {
+    font-size:21px
+  }
+  .stats-grid.three {
+    gap:10px
+  }
+  .results-bottom {
+    grid-template-columns:1fr
+  }
+  .profile-grid {
+    grid-template-columns:1fr
+  }
+  .profile-card {
+    display:block
+  }
+  .page-heading {
+    align-items:flex-start;
+    flex-wrap:wrap
+  }
+  .academic-info {
+    gap:20px
+  }
+  .calendar-legend {
+    flex-wrap:wrap
+  }
+  footer {
+    padding-left:22px;
+    padding-right:22px;
+    font-size:9px
+  }
+}
+
+/* ======================================================================
+   83. RESPONSIVE: ĐIỆN THOẠI (<= 700px)
+   Sidebar ẩn và mở bằng nút menu; nội dung gọn hơn.
+   ====================================================================== */
+@media(max-width:700px) {
+  .sidebar {
+    transform:translateX(-100%);
+    width:238px;
+    transition:transform .2s
+  }
+  .workspace {
+    margin-left:0
+  }
+  .mobile-menu {
+    display:inline-flex
+  }
+  .menu-open .sidebar {
+    transform:translateX(0)
+  }
+  .menu-open .sidebar-scrim {
+    display:block;
+    position:fixed;
+    inset:0;
+    background:#10213c77;
+    z-index:35;
+    width:100%;
+    height:100%
+  }
+  .menu-open {
+    overflow:hidden
+  }
+  .topbar {
+    height:66px;
+    padding:0 16px;
+    gap:10px
+  }
+  .breadcrumb {
+    gap:7px;
+    font-size:11px
+  }
+  .topbar-right {
+    gap:7px
+  }
+  .search-box {
+    width:155px;
+    padding:8px
+  }
+  .search-box input {
+    font-size:10px
+  }
+  .search-box kbd {
+    display:none
+  }
+  .user-chip {
+    padding-left:0;
+    border:0
+  }
+  .avatar {
+    width:32px;
+    height:32px;
+    font-size:10px
+  }
+  .notification {
+    display:none
+  }
+  main {
+    padding:19px 16px 0
+  }
+  .welcome {
+    padding:24px;
+    min-height:188px
+  }
+  .welcome-art {
+    width:88px;
+    margin-right:-12px
+  }
+  .cap-tile {
+    width:65px;
+    height:65px;
+    border-radius:17px
+  }
+  .cap-tile .icon {
+    width:44px;
+    height:44px
+  }
+  .welcome h1 {
+    font-size:25px
+  }
+  .welcome-kicker {
+    font-size:7px;
+    letter-spacing:.7px
+  }
+  .welcome p {
+    font-size:12px
+  }
+  .welcome-date {
+    font-size:10px
+  }
+  .art-spark {
+    font-size:25px;
+    right:-7px;
+    top:35px
+  }
+  .section-caption h2 {
+    font-size:13px
+  }
+  .section-caption>span {
+    font-size:9px
+  }
+  .stat>strong,.stat:last-child>strong {
+    font-size:23px
+  }
+  .stat {
+    padding:14px
+  }
+  .stats-grid,.quick-links {
+    gap:11px
+  }
+  .quick-link {
+    padding:12px;
+    gap:10px
+  }
+  .quick-link b {
+    font-size:10px
+  }
+  .quick-link small {
+    font-size:8px
+  }
+  .quick-link>.icon {
+    display:none
+  }
+  .news-grid {
+    gap:16px;
+    margin-bottom:16px
+  }
+  .panel-heading {
+    padding:16px
+  }
+  .news-row {
+    width:calc(100% - 32px);
+    margin:0 16px
+  }
+  .news-row b {
+    font-size:11px
+  }
+  .panel-heading h2 {
+    font-size:12px
+  }
+  .text-btn {
+    font-size:10px
+  }
+  .activity {
+    padding:20px
+  }
+  .activity h3 {
+    font-size:14px
+  }
+  .activity-art {
+    min-width:108px
+  }
+  .bottom-grid {
+    gap:16px
+  }
+  footer {
+    flex-direction:column;
+    align-items:center;
+    padding:25px 16px;
+    gap:5px
+  }
+  .page-heading {
+    gap:16px;
+    margin-bottom:20px
+  }
+  .page-heading h1 {
+    font-size:25px
+  }
+  .page-heading p {
+    font-size:11px
+  }
+  .stats-grid.three {
+    grid-template-columns:1fr
+  }
+  .three .stat {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:2px 10px
+  }
+  .three .stat-top {
+    grid-row:1/3;
+    flex-direction:row-reverse;
+    justify-content:flex-end;
+    gap:10px
+  }
+  .three .stat>strong {
+    text-align:right;
+    font-size:24px
+  }
+  .three .stat>small {
+    text-align:right
+  }
+  .notice {
+    font-size:10px;
+    align-items:flex-start
+  }
+  .payment-bar {
+    padding:16px;
+    align-items:flex-start;
+    flex-direction:column
+  }
+  .payment-bar .btn {
+    width:100%
+  }
+  th,td {
+    padding:14px 16px
+  }
+  .calendar-toolbar {
+    padding:14px
+  }
+  .week-controls {
+    flex-wrap:wrap;
+    gap:6px;
+    width:100%
+  }
+  .week-controls strong {
+    font-size:12px
+  }
+  .week-controls .btn {
+    margin-left:auto;
+    font-size:10px;
+    padding:8px
+  }
+  .calendar-legend {
+    font-size:9px
+  }
+  .schedule-list {
+    padding:0 14px
+  }
+  .schedule-list-row {
+    gap:12px
+  }
+  .schedule-list-row>div {
+    flex-direction:column
+  }
+  .schedule-list-row .lesson {
+    width:100%;
+    min-width:0
+  }
+  .schedule-list-row>strong {
+    width:57px;
+    font-size:11px
+  }
+  .form-grid {
+    grid-template-columns:1fr
+  }
+  .profile-form {
+    padding:18px
+  }
+  .academic-info {
+    padding:18px;
+    gap:22px 13px
+  }
+  .academic-info dd {
+    font-size:11px
+  }
+  .profile-form-panel .panel-heading .muted {
+    font-size:10px
+  }
+  .form-actions .btn {
+    flex:1;
+    padding:10px;
+    font-size:11px
+  }
+  .toast {
+    left:50%;
+    width:max-content
+  }
+  .dialog-top,#dialog-body {
+    padding:18px
+  }
+  .dialog-top h2 {
+    font-size:15px
+  }
+  .payment-summary>div {
+    font-size:11px
+  }
+  .heading-actions {
+    width:100%
+  }
+  .select-label,select {
+    width:100%
+  }
+}
+
+/* ======================================================================
+   84. HỖ TRỢ GIẢM CHUYỂN ĐỘNG
+   Tắt hiệu ứng chuyển động nếu thiết bị yêu cầu.
+   ====================================================================== */
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    transition:none!important;
+    scroll-behavior:auto!important
+  }
+}

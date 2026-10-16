@@ -1,0 +1,179 @@
+/* ======================================================================
+   43. TIÊU ĐỀ TỪNG TRANG
+   Ví dụ: Học phí, Lịch học, Kết quả, Hồ sơ.
+   ====================================================================== */
+.page-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin:3px 0 25px
+}
+.page-heading h1 {
+  margin-top:8px
+}
+.page-heading p {
+  font-size:12px;
+  color:#8593ab;
+  margin-top:8px
+}
+
+/* ======================================================================
+   44. THANH THAO TÁC Ở ĐẦU TRANG
+   Các điều khiển chọn học kỳ / lọc dữ liệu.
+   ====================================================================== */
+.heading-actions {
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+.select-label {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  color:#8390a6;
+  font-size:10px
+}
+
+/* ======================================================================
+   45. DANH SÁCH CHỌN (SELECT)
+   Viền, nền, cỡ chữ của ô chọn học kỳ.
+   ====================================================================== */
+select {
+  padding:10px 35px 10px 12px;
+  border:1px solid #dfe6f1;
+  background:white;
+  border-radius:8px;
+  color:var(--text);
+  font-size:12px;
+  min-width:210px
+}
+
+/* ======================================================================
+   46. KHUNG THÔNG BÁO THÔNG TIN
+   Nền xanh nhạt và chữ thông báo.
+   ====================================================================== */
+.notice {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#eaf1ff;
+  color:#6079a7;
+  border:1px solid #dce7ff;
+  padding:13px 16px;
+  border-radius:9px;
+  font-size:11px;
+  margin-bottom:20px
+}
+.notice>.icon {
+  width:17px;
+  flex-shrink:0
+}
+
+/* ======================================================================
+   47. CÁC NÚT BẤM
+   Kiểu nút chung và các biến thể primary/secondary.
+   ====================================================================== */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:11px 17px;
+  border-radius:8px;
+  border:1px solid transparent;
+  font-size:12px;
+  font-weight:600
+}
+.btn .icon {
+  width:17px;
+  height:17px
+}
+
+/* ======================================================================
+   47A. NÚT CHÍNH
+   Nền xanh cho hành động quan trọng.
+   ====================================================================== */
+.primary {
+  background:var(--blue);
+  color:white;
+  box-shadow:0 3px 6px #255de614
+}
+.primary:hover:not(:disabled) {
+  background:#174bce
+}
+
+/* ======================================================================
+   47B. NÚT PHỤ
+   Nền trắng và viền mờ.
+   ====================================================================== */
+.secondary {
+  background:white;
+  border-color:#dfe6f2;
+  color:#61728f
+}
+.secondary:hover {
+  background:#f6f8fc
+}
+.compact {
+  padding:8px 12px;
+  font-size:11px
+}
+.full {
+  width:100%
+}
+
+/* ======================================================================
+   48. BẢNG DỮ LIỆU
+   Bảng học phí / bảng điểm; cuộn ngang khi không đủ chỗ.
+   ====================================================================== */
+.table-wrap {
+  overflow-x:auto
+}
+table {
+  border-collapse:collapse;
+  width:100%;
+  text-align:left;
+  white-space:nowrap
+}
+th {
+  background:#f8faff;
+  font-size:10px;
+  font-weight:500;
+  color:#8492ab;
+  padding:14px 21px
+}
+td {
+  border-top:1px solid #edf1f7;
+  padding:19px 21px;
+  font-size:12px
+}
+td b {
+  font-size:12px;
+  font-weight:600
+}
+td small {
+  display:block;
+  font-size:10px;
+  color:#98a4ba;
+  margin-top:5px
+}
+
+/* ======================================================================
+   49. Ô TÍCH CHỌN
+   Kích thước và màu checkbox ở bảng học phí.
+   ====================================================================== */
+input[type=checkbox] {
+  accent-color:var(--blue);
+  width:16px;
+  height:16px;
+  cursor:pointer
+}
+input:disabled {
+  cursor:default
+}
+.numeric {
+  font-weight:600;
+  font-variant-numeric:tabular-nums
+}
+

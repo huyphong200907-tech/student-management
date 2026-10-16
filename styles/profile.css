@@ -1,0 +1,199 @@
+/* ======================================================================
+   64. BỐ CỤC TRANG HỒ SƠ SINH VIÊN
+   Cột thông tin bên trái và phần chi tiết bên phải.
+   ====================================================================== */
+.profile-grid {
+  display:grid;
+  grid-template-columns:290px 1fr;
+  gap:24px;
+  align-items:start
+}
+
+/* ======================================================================
+   65. THẺ HỒ SƠ
+   Tên, mã sinh viên, ảnh đại diện và thông tin cá nhân.
+   ====================================================================== */
+.profile-card {
+  text-align:center
+}
+
+/* ======================================================================
+   66. ẢNH BÌA HỒ SƠ
+   Hiện tại dùng nền chuyển sắc, có thể thay bằng background-image.
+   ====================================================================== */
+.profile-cover {
+  height:104px;
+  /* Nền chuyển màu của ảnh bìa hồ sơ. */
+  background:linear-gradient(125deg,#244796,#5d8aed)
+}
+
+/* ======================================================================
+   67. AVATAR TRONG TRANG PROFILE
+   Kích thước, màu nền, chữ, viền trắng và vị trí ảnh đại diện.
+   ====================================================================== */
+.profile-avatar {
+  position:relative;
+  display:grid;
+  place-items:center;
+  border:5px solid white;
+  /* Chiều rộng avatar. */
+  width:86px;
+  /* Chiều cao avatar. */
+  height:86px;
+  /* Nền avatar nếu chỉ hiển thị chữ. */
+  background:#e5edff;
+  color:#3d6ac4;
+  border-radius:50%;
+  margin:-43px auto 13px;
+  font-size:27px;
+  font-weight:600
+}
+.profile-avatar>span {
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:23px;
+  height:23px;
+  border:3px solid white;
+  border-radius:50%;
+  background:#21ad88;
+  color:white;
+  display:grid;
+  place-items:center
+}
+.profile-avatar .icon {
+  width:12px;
+  height:12px
+}
+.profile-card h2 {
+  font-size:19px
+}
+.profile-card>p {
+  font-size:12px;
+  color:var(--muted);
+  margin:5px 0 13px
+}
+.profile-identity {
+  margin:23px 22px 0;
+  border-top:1px solid var(--line);
+  padding:18px 0;
+  text-align:left
+}
+.profile-identity p {
+  font-size:11px;
+  color:#788aa5;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 0
+}
+.profile-identity .icon {
+  width:17px;
+  height:17px;
+  color:#98aac8
+}
+.profile-note {
+  background:#fafbfe;
+  border-top:1px solid var(--line);
+  padding:17px;
+  color:#99a5b9;
+  font-size:10px
+}
+.profile-note .icon {
+  width:14px;
+  height:14px;
+  margin-right:4px
+}
+
+/* ======================================================================
+   68. THÔNG TIN HỌC TẬP
+   Bố cục các dòng ngành, khoa, lớp và niên khóa.
+   ====================================================================== */
+.academic-info {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:23px;
+  padding:24px;
+  margin:0
+}
+.academic-info dt,.details dt {
+  font-size:11px;
+  color:#96a3b7;
+  margin-bottom:6px
+}
+.academic-info dd {
+  margin:0;
+  font-size:12px;
+  font-weight:600
+}
+
+/* ======================================================================
+   69. BIỂU MẪU THÔNG TIN CÁ NHÂN
+   Phần chỉnh sửa hồ sơ và thông tin liên hệ.
+   ====================================================================== */
+.profile-form-panel {
+  margin-top:22px
+}
+.profile-form {
+  padding:24px
+}
+
+/* ======================================================================
+   70. CÁC Ô NHẬP THÔNG TIN
+   Bố cục hai cột, cỡ chữ, màu nền ô nhập.
+   ====================================================================== */
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px
+}
+.form-grid label {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:11px;
+  font-weight:600;
+  color:#647592
+}
+.form-grid input,.form-grid textarea {
+  width:100%;
+  padding:11px 13px;
+  border:1px solid #dfe6f1;
+  border-radius:7px;
+  font-size:12px;
+  color:#526781;
+  background:#fdfdff;
+  line-height:1.6
+}
+.form-grid textarea {
+  resize:vertical
+}
+.full-field {
+  grid-column:1/-1
+}
+
+/* ======================================================================
+   71. NÚT LƯU / HỦY TRONG HỒ SƠ
+   Nhóm thao tác bên dưới biểu mẫu.
+   ====================================================================== */
+.form-actions {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid var(--line);
+  padding-top:20px;
+  margin-top:23px
+}
+.form-actions>span {
+  margin-right:auto;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:9px;
+  color:#96a5bc
+}
+.form-actions>span .icon {
+  width:13px;
+  height:13px
+}
+
