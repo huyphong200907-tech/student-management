@@ -1,7 +1,79 @@
 // Dữ liệu minh họa, không kết nối với hệ thống của trường.
 window.PORTAL_DATA = {
-  student: { name: 'Trần Đức Sinh', id: '241200123', className: 'CNTT 02 · K65', major: 'Công nghệ thông tin', faculty: 'Công nghệ thông tin', course: '2024 – 2028', birthday: '2006-05-18', email: 'sinh241200123@example.com', phone: '0912345678', address: 'Cầu Giấy, Hà Nội', bio: 'Sinh viên Công nghệ thông tin, yêu thích lập trình và thiết kế web.' },
-  semesters: [{ id: '2026-1', name: 'Học kỳ I · 2026 – 2027' }, { id: '2025-2', name: 'Học kỳ II · 2025 – 2026' }],
+  student: {
+    name: 'Trần Đức Sinh',
+    id: '241200123',
+    className: 'CNTT 02 · K65',
+    major: 'Công nghệ thông tin',
+    faculty: 'Công nghệ thông tin',
+    course: '2024 – 2028',
+    birthday: '2006-05-18',
+    email: 'sinh241200123@example.com',
+    phone: '0912345678',
+    address: 'Cầu Giấy, Hà Nội',
+    bio: 'Sinh viên Công nghệ thông tin, yêu thích lập trình và thiết kế web.'
+  },
+
+  students: [
+    {
+      name: 'Bùi Huy Phong',
+      id: '241200124',
+      className: 'CNTT 02 · K65',
+      major: 'Công nghệ thông tin',
+      faculty: 'Công nghệ thông tin',
+      course: '2024 – 2028',
+      birthday: '2006-07-12',
+      email: 'phong241200124@example.com',
+      phone: 'Chưa cập nhật',
+      address: 'Đan Phượng, Hà Nội',
+      bio: 'Yêu thích lập trình, phát triển phần mềm, trí tuệ nhân tạo và công nghệ web.'
+    },
+    {
+      name: 'Bùi Chí Lộc',
+      id: '241200125',
+      className: 'CNTT 02 · K65',
+      major: 'Công nghệ thông tin',
+      faculty: 'Công nghệ thông tin',
+      course: '2024 – 2028',
+      birthday: '2006-03-25',
+      email: 'loc241200125@example.com',
+      phone: 'Chưa cập nhật',
+      address: 'Hà Đông, Hà Nội',
+      bio: 'Quan tâm đến lập trình ứng dụng, cơ sở dữ liệu và phát triển hệ thống.'
+    },
+    {
+      name: 'Trần Thị Mơ',
+      id: '241200126',
+      className: 'CNTT 02 · K65',
+      major: 'Công nghệ thông tin',
+      faculty: 'Công nghệ thông tin',
+      course: '2024 – 2028',
+      birthday: '2006-09-08',
+      email: 'mo241200126@example.com',
+      phone: 'Chưa cập nhật',
+      address: 'Gia Lâm, Hà Nội',
+      bio: 'Yêu thích thiết kế giao diện, trải nghiệm người dùng và lập trình frontend.'
+    },
+    {
+      name: 'Nguyễn Vinh Quang',
+      id: '241200127',
+      className: 'CNTT 02 · K65',
+      major: 'Công nghệ thông tin',
+      faculty: 'Công nghệ thông tin',
+      course: '2024 – 2028',
+      birthday: '2006-11-16',
+      email: 'quang241200127@example.com',
+      phone: 'Chưa cập nhật',
+      address: 'Long Biên, Hà Nội',
+      bio: 'Đam mê công nghệ phần mềm, an toàn thông tin và lập trình backend.'
+    }
+  ],
+
+  semesters: [
+    { id: '2026-1', name: 'Học kỳ I · 2026 – 2027' },
+    { id: '2025-2', name: 'Học kỳ II · 2025 – 2026' }
+  ]
+};
   fees: [
     { id: 'F01', semester: '2026-1', name: 'Thiết kế web', code: 'IT301', credits: 3, amount: 1350000, paid: false },
     { id: 'F02', semester: '2026-1', name: 'Cơ sở dữ liệu', code: 'IT302', credits: 3, amount: 1350000, paid: false },
