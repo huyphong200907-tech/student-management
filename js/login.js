@@ -1,6 +1,9 @@
 import { getSession, login } from './auth.js';
+
 const current = getSession();
+
 if (current) location.replace(current.role === 'admin' ? 'admin.html' : 'index.html');
+
 document.getElementById('login-form').addEventListener('submit', event => {
   event.preventDefault();
   const username = document.getElementById('username').value;
